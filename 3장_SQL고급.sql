@@ -69,7 +69,7 @@ INSERT INTO SALE (EMPNO, YEAR, MONTH, PRICE) VALUES (1006, 2024, 2, 109000);
 /*WHERE절과 기본 연산자
 - WHERE절은 데이터를 조회할 때 특정 조건을 기준으로 원하는 데이터를 조회
 - 기본적인 다양한 연산자를 이용해 세밀하게 데이터 조회
-☞ 실습하기 2-1. 다양한 조건으로 데이터 조
+☞ 실습하기 2-1. 다양한 조건으로 데이터 조회
 */
 SELECT * FROM EMP WHERE name = '김유신';
 SELECT * FROM EMP WHERE job = '차장' AND depno = 101;
@@ -101,3 +101,48 @@ SELECT * FROM SALE WHERE price NOT BETWEEN 50000 AND 100000;
 SELECT * FROM SALE WHERE year = 2024;
 SELECT * FROM SALE WHERE YEAR = 2024 AND MONTH = 2;
 SELECT * FROM SALE WHERE MONTH IN (1, 2);
+
+--실습하기 2-2
+select * from sale order by price;
+select * from sale order by price asc;
+select * from sale order by price desc where price is not null;
+select * from emp order by name;
+select * from emp order by name desc;
+select * from emp order by regdate asc;
+
+select * from sale where price>50000 order by price desc;
+
+select * from sale
+    where price >50000
+    order by year desc, month, price desc;
+
+select * from sale;    
+select * from sale fetch first 3 row only;
+select * from sale offset 0 rows fetch next 3 rows only;
+select * from sale offset 1 rows fetch next 2 rows only;
+select * from sale offset 5 rows fetch next 3 rows only;
+
+select * from sale 
+    order by price desc;
+select * from sale 
+    order by price desc
+    offset 3 rows fetch next 5 rows only;
+    
+SELECT * FROM Sale
+    WHERE price < 50000
+    ORDER BY price DESC
+    FETCH FIRST 3 ROWS ONLY;
+    
+SELECT * FROM Sale
+    WHERE price > 50000
+    ORDER BY year DESC, month, price DESC
+    FETCH FIRST 5 ROWS ONLY;
+    
+--실습하기 2-3
+select DISTINCT depno from emp;
+select DISTINCT job,depno from emp;
+select empno as 사번, name as 이름, gender "성별" from emp;
+select empno e, name n, gender g from emp;
+
+
+
