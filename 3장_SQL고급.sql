@@ -144,5 +144,277 @@ select DISTINCT job,depno from emp;
 select empno as 사번, name as 이름, gender "성별" from emp;
 select empno e, name n, gender g from emp;
 
+--실습하기 3-1. 다향한 SQL 숫자 함수 실습
+select sum(price) as 합계 from sale;
+select *from sale;
+select *from emp;
+select count(*) as 직원수 from emp;
+select count(empno) as 직원수 from emp; 
+select count(depno) as 직원수 from emp;
+
+select ceil(1.2) from DUAL;
+select ceil(1.8) from DUAL;
+select floor(1.2) from DUAL;
+select floor(1.8) from DUAL;
+select round(1.2) from DUAL;
+select round(1.8) from DUAL;
+
+select dbms_random.value from dual;
+select ceil(dbms_random.value*10) from dual;
+
+select *from sale;
+SELECT SUM(PRICE) AS 합계 FROM Sale;
+SELECT AVG(PRICE) AS 평균 FROM Sale;
+SELECT MAX(PRICE) AS "최대값" FROM Sale;
+SELECT MIN(PRICE) AS "최소값" FROM Sale;
+SELECT COUNT(*) AS 직원수 FROM EMP;
+SELECT COUNT(JOB) AS "정직원 수" FROM EMP;
+SELECT CEIL(1.2) FROM DUAL;
+SELECT CEIL(1.8) FROM DUAL;
+SELECT FLOOR(1.2) FROM DUAL;
+SELECT FLOOR(1.8) FROM DUAL;
+SELECT ROUND(1.2) FROM DUAL;
+SELECT ROUND(1.8) FROM DUAL;
+SELECT DBMS_RANDOM.VALUE FROM DUAL;
+SELECT CEIL(DBMS_RANDOM.VALUE * 10) FROM DUAL;
+
+--실습하기 3-2 다양한 sql 문자 함수 실습
+select 'Hello ORACLE!',length('Hello ORACLE!') from dual;
+select
+    'HELLO ORACLE!',
+    substr('Hello Oracle',1,3),
+    substr('Hello Oracle',3,2),
+    substr('Hello Oracle',5)
+from
+    dual;
+SELECT
+    INSTR('HELLO ORACLE!', 'L') AS INSTR_1,
+    INSTR('HELLO ORACLE!', 'L', -1) AS INSTR_2
+FROM 
+    DUAL;
+
+select '010-1234-5678',replace('010-1234-5678', '-','') from dual;
+
+select 
+    LPAD('oracle',10,'#') as LPAD, //('페딩문자',전체길이,패딩문자)
+    RPAD('oracle',10,'*') as RPAD
+from dual;
+
+select concat(empno,name) 
+from emp where name='이순신';
+
+//trim
+SELECT
+    '[ _Oracle_ ]' AS BEFORE,
+    '[' || TRIM(' _Oracle_ ') || ']' AS TRIM
+ FROM DUAL;
+
+//sysdate
+select 
+    sysdate,
+    sysdate -1,
+    sysdate +1
+from dual;
 
 
+select 
+    sysdate,
+    sysdate -1,
+    sysdate +1
+from dual;
+
+// ADD_MONTHS(d, n) : 몇 개월 이후 날짜 조회
+SELECT
+    ADD_MONTHS(SYSDATE, 1),
+    ADD_MONTHS(SYSDATE, -1)
+FROM DUAL;
+
+// MONTHS_BETWEEN(d1, d2) : 두 날짜 간 개월 수 계산
+SELECT
+MONTHS_BETWEEN(DATE '2025-07-13', DATE '2024-07-13') AS 개월차 
+FROM DUAL;
+
+// NEXT_DAY(d, '요일') : d 이후의 특정 요일 날짜
+SELECT
+NEXT_DAY(SYSDATE, '월요일') AS 다음_월요일 
+FROM DUAL;
+
+--실습하기 3-4
+// TO_CHAR : 날짜 데이터를 문자 데이터로 변환
+select
+to_char(sysdate,'yyyy') as yyyy,
+to_char(sysdate,'MM') as yyyy,
+to_char(sysdate,'DD') as yyyy,
+to_char(sysdate,'HH24') as yyyy,
+to_char(sysdate,'MI') as yyyy,
+to_char(sysdate,'SS') as yyyy,
+to_char(sysdate,'yyyy/MM/DD HH24:MI:SS') as yyyy
+from dual;
+
+insert into emp
+values (1011, '안중근', 'M', '부장',30,to_char(SYSDATE, 'YYYY/MM/DD'));
+
+
+// TO_DATE : 문자 데이터를 날짜 데이터로 변환
+SELECT
+TO_DATE('20250714', 'YYYY/MM/DD') AS 날짜1,
+TO_DATE('250714', 'YY-MM-DD') AS 날짜2,
+TO_DATE(SYSDATE, 'YYYY/MM/DD HH24:MI:SS') AS 날짜시간
+FROM DUAL;
+
+INSERT INTO EMP VALUES (1012, '유관순', 'F', '차장', 20, SYSDATE);
+INSERT INTO EMP VALUES (1013, '윤봉길', 'M', '과장', 30, sysdate);
+select * from emp;
+insert into emp(empno,name,gender,job,regdate) values(1111,'세종대왕','M','회장',sysdate);
+update emp set job='사장' where name='세종대왕';
+delete from emp where name='세종대왕';
+
+// NVL, NVL2 : NULL 체크 함수
+SELECT
+    NO,
+    EMPNO,
+    YEAR,
+    MONTH,
+    NVL(PRICE, 0) 
+FROM SALE;
+SELECT
+    EMPNO,
+    NAME,
+    GENDER,
+    JOB,
+    NVL2(DEPNO, '정규직', '비정규직')
+FROM EMP;
+
+/*GROUP BY
+- 여러 데이터에서 의미있는 하나의 결과를 특정 열 값별로 묶어서 조회
+- GROUP BY 절로 먼저 지정한 열로 대그룹을 나누고 그 다음 소그룹으로 그룹화
+실습 4-1. 그룹화 실습*/
+select empno from sale;
+SELECT EMPNO FROM Sale GROUP BY EMPNO;
+select year from sale;
+SELECT YEAR FROM Sale GROUP BY YEAR;
+SELECT EMPNO, YEAR FROM Sale GROUP BY EMPNO, YEAR;
+
+SELECT EMPNO, COUNT(*) AS 팬매건수 FROM Sale GROUP BY EMPNO;
+SELECT EMPNO, SUM(price) AS 합계 FROM Sale GROUP BY EMPNO;
+SELECT EMPNO, AVG(price) AS 평균 FROM Sale GROUP BY EMPNO;
+SELECT EMPNO, YEAR, SUM(PRICE) AS 합계
+FROM Sale
+GROUP BY EMPNO, YEAR;
+
+SELECT EMPNO, YEAR, SUM(PRICE) AS 합계
+FROM SALE
+GROUP BY EMPNO, YEAR
+ORDER BY YEAR ASC, 합계 DESC;
+
+SELECT EMPNO, YEAR, SUM(price) AS 합계
+FROM SALE
+WHERE PRICE >= 50000
+GROUP BY EMPNO, YEAR
+ORDER BY year desc,합계 DESC;
+
+
+
+/*HAVING
+- GROUP BY로 그룹화된 결과에 대한 조건을 지정해서 조회
+☞ 실습 4-2. 그룹화 조건 실습*/
+SELECT EMPNO, SUM(PRICE) AS 합계 FROM Sale GROUP BY EMPNO HAVING SUM(price) >= 200000;
+
+SELECT EMPNO,price, YEAR
+FROM SALE;
+
+SELECT EMPNO, YEAR, price
+FROM SALE
+WHERE PRICE >= 100000;
+
+SELECT EMPNO, YEAR, SUM(price) AS 합계 
+FROM SALE
+WHERE PRICE >= 100000
+GROUP BY EMPNO, YEAR
+HAVING SUM(price) >= 200000
+ORDER BY 합계 DESC;
+
+
+/*UNION(합집합)
+- UNION은 두 SELECT 결과의 모든 행을 합친 후, 중복된 행은 제거
+- UNION ALL은 UNION과 같지만 중복을 제거하지 않음
+☞ 실습하기 5-1. 2023년도와 2024년도 매출 직원 목록 합치기*/
+
+SELECT EMPNO, MONTH, PRICE FROM SALE WHERE YEAR = 2023
+UNION
+SELECT EMPNO, MONTH, PRICE FROM SALE WHERE YEAR = 2024;
+
+SELECT EMPNO, MONTH, PRICE FROM SALE WHERE YEAR = 2023
+UNION ALL
+SELECT EMPNO, MONTH, PRICE FROM SALE WHERE YEAR = 2024;
+
+SELECT EMPNO, YEAR, SUM(PRICE) AS 합계 FROM Sale
+WHERE YEAR = 2023
+GROUP BY EMPNO, YEAR
+UNION
+SELECT EMPNO, YEAR, SUM(PRICE) AS 합계 FROM Sale
+WHERE YEAR = 2024
+GROUP BY EMPNO, YEAR
+
+ORDER BY YEAR ASC, 합계 DESC;
+
+/*INTERSECT(교집합)
+- INTERSECT는 두 SELECT 결과에서 공통으로 존재하는 행만 출력, 교집합
+☞ 실습하기 5-2. 2023년도와 2024년도를 모두 포함한 직원*/
+SELECT EMPNO FROM SALE WHERE YEAR = 2023
+INTERSECT
+SELECT EMPNO FROM SALE WHERE YEAR = 2024;
+
+/*MINUS(차집합)
+- MINUS는 첫 번째 SELECT 결과에서, 두 번째 SELECT에 없는 행만 출력, 차집합
+☞ 실습하기 5-3. 2023년도에만 있고 2024년도에는 없는 직원*/
+SELECT EMPNO FROM SALE WHERE YEAR = 2023
+MINUS
+SELECT EMPNO FROM SALE WHERE YEAR = 2024;
+
+/*내부 조인(INNER JOIN)
+- 두 개 이상의 테이블을 연결하여 하나의 테이블처럼 조회
+- 내부 조인은 JOIN 대상이 되는 양쪽 테이블 모두 일치하는 데이터를 출력하는 조인
+☞ 실습 6-1. 내부 조인 실습*/
+SELECT 
+*
+FROM EMP E
+JOIN DEPT D
+ON E.DEPNO = D.DEPTNO;
+
+SELECT *
+FROM EMP E
+JOIN DEPT D
+USING (DEPTNO); --조인하려는 두 테이블의 동일한 컬럼명
+
+SELECT *
+FROM EMP E, DEPT D
+WHERE E.DEPNO = D.DEPTNO;
+
+SELECT
+S.NO,
+S.EMPNO,
+E.NAME,
+E.JOB,
+E.REGDATE,
+E.DEPNO,
+D.DNAME
+FROM SALE S
+JOIN EMP E ON S.EMPNO = E.EMPNO
+JOIN DEPT D ON E.DEPNO = D.DEPTNO
+WHERE PRICE > 100000 AND YEAR = 2024
+ORDER BY S.PRICE DESC;
+
+/*2) 외부 조인(OUTER JOIN)
+- 두 개 이상의 테이블을 연결할 때 어느 한쪽(LEFT, RIGHT)의 모든 데이터를 포함하는 조인
+☞ 실습 6-2. 외부 조인 실습*/
+
+delete from emp where empno=1006;
+
+SELECT * 
+FROM SALE S
+LEFT JOIN EMP E ON S.EMPNO = E.EMPNO;
+
+SELECT * 
+FROM SALE S
+RIGHT JOIN EMP E ON S.EMPNO = E.EMPNO;

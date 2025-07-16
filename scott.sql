@@ -62,6 +62,43 @@ select empno,ename,hiredate from emp ;
 select empno,ename,hiredate from emp where hiredate like '___12%';
 select empno,ename,comm from emp where deptno in(20,30);
 
+//2-1
+select ename, initcap(ename) "initcap"
+from emp
+where deptno=10;
+
+select name, initcap(name) "initcap"
+from professor
+where deptno=101;
+
+//2-2,3
+select ename, lower(ename) "lower", upper(ename) "upper"
+from emp
+where deptno=10;
+
+//2-4
+select ename,length(ename) "length", lengthb(ename) "length"
+from emp
+where deptno=20;
+
+select '서진수' "name",
+length('서진수') "length",
+lengthb('서진수') "lengthb"
+from dual;
+
+//2-5
+select concat(ename,job)
+from emp
+where deptno=10;
+
+//2-6
+select substr('abcde',3,2) "3,2",
+       substr('abcde',-3,2) "3,-2",
+       substr('abcde',-3,4) "3,4"
+from dual;
+
+
+
 
 
 
