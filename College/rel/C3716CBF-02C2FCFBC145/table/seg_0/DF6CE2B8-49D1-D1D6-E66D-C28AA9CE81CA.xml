@@ -1,0 +1,78 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DF6CE2B8-49D1-D1D6-E66D-C28AA9CE81CA" name="Lecture">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:14:57 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="lecNo" id="B0CBC5F5-F5B5-057A-031C-38BBF3093AF0">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:51 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lecName" id="A7E7A512-0BF5-A8A5-C716-2C745F28BA9D">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:51 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lecCredit" id="C2145005-EE3B-1032-494B-8DC9EE8E8BA8">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:51 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lecTime" id="7B74185B-7D40-0C3F-20D1-C9555D933A26">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:51 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="lecClass" id="336EF3E3-22C1-3A9A-0A6B-F5BCA0353E02">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:51 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9681C918-BE3B-2351-78D4-6D29C7AFD16A" name="Lecture_PK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:16:51 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B0CBC5F5-F5B5-057A-031C-38BBF3093AF0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

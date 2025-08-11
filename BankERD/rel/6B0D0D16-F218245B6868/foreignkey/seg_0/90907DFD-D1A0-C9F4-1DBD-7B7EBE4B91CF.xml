@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="90907DFD-D1A0-C9F4-1DBD-7B7EBE4B91CF" containerWithKeyObject="A8F0EF98-4E3C-68D7-7CD4-FB938904D91B" localFKIndex="35B4A753-DF5B-4EF3-78B5-B65563439C0C" name="bank_transaction_bank_account_FK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 02:27:00 UTC</createdTime>
+<ownerDesignName>BankERD</ownerDesignName>
+<referredTableLongName>bank_account</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>B4D1B0FE-7580-88DE-37CF-F2F3E4E05259</referredTableID>
+<keyObject>5DAA6B8D-9A07-6243-FBF6-C971D9AE4F3A</keyObject>
+<referredKeyID>5DAA6B8D-9A07-6243-FBF6-C971D9AE4F3A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>a_no</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

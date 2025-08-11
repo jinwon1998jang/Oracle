@@ -1,0 +1,90 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FE149469-0DE8-9734-D1F0-A553B84E7C8E" name="Student">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:08:45 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<ordsAlias>table_1</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="stdNo" id="B46B4981-A8CB-EA4B-9FC4-B2753C002586">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:10:57 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>8 BYTE</dataTypeSize>
+<ownDataTypeParameters>8 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="stdName" id="F12D9354-E13B-B972-BC51-9A4344F5C466">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:10:57 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="stdHp" id="9BB42BDC-F73D-2CE1-4F48-66BF94A1830D">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:10:57 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>13 BYTE</dataTypeSize>
+<ownDataTypeParameters>13 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="stdYear" id="188776EE-746B-C0AC-526C-24159A9B8EA7">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:10:57 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="stdAddress" id="A283FC0F-0919-575F-6CC0-4B2BC9EE7789">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:10:57 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 BYTE</dataTypeSize>
+<ownDataTypeParameters>100 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A21E2F0D-D01F-43D8-0FA2-CE547D0030DA" name="Student_PK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:10:57 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B46B4981-A8CB-EA4B-9FC4-B2753C002586"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5ECA2B0B-7720-4AEF-FFEE-EB7319CBFAD5" name="Student__UN">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-11 03:22:47 UTC</createdTime>
+<ownerDesignName>College</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9BB42BDC-F73D-2CE1-4F48-66BF94A1830D"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
