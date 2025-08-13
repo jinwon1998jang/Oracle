@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="BC51CD21-2111-948E-119B-048853E703A6" name="Account">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:05:00 UTC</createdTime>
+<ownerDesignName>BankProject</ownerDesignName>
+<ordsAlias>table_3</ordsAlias>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="acc_id" id="1BBFBA10-EBF4-EE1B-AA6B-14EECB8A1221">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:13:14 UTC</createdTime>
+<ownerDesignName>BankProject</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>14 BYTE</dataTypeSize>
+<ownDataTypeParameters>14 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cust_jumin" id="C36811E1-01E4-FAA3-369D-589055D13A13">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:15:49 UTC</createdTime>
+<ownerDesignName>BankProject</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>14 BYTE</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="722EEF78-54EC-691D-353E-6A9C3CE80186" referredColumn="60C8645B-2C5B-D6B9-372F-C679CB74092E"/>
+</associations>
+</Column>
+<Column name="acc_type" id="97A27967-F7DF-48E2-CFFC-740C072DE886">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:13:14 UTC</createdTime>
+<ownerDesignName>BankProject</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 BYTE</dataTypeSize>
+<ownDataTypeParameters>20 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="acc_balance" id="28915BC5-A6B2-E823-6507-9307A5252AEB">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:13:14 UTC</createdTime>
+<ownerDesignName>BankProject</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="acc_card" id="E6527A9B-3EC2-ADB0-6E02-985745E47698">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:13:14 UTC</createdTime>
+<ownerDesignName>BankProject</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="acc_register_date" id="FC7F6836-6B97-48FC-C269-12239F62D2ED">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:13:14 UTC</createdTime>
+<ownerDesignName>BankProject</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="2BA28AEA-C730-D276-E75A-FE0A0881FBB4" name="Account_PK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:13:14 UTC</createdTime>
+<ownerDesignName>BankProject</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1BBFBA10-EBF4-EE1B-AA6B-14EECB8A1221"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A1733AEB-65B0-20BD-6B10-03933DC4B398" name="Account_Customer_FK">
+<createdBy>GGG</createdBy>
+<createdTime>2025-08-13 00:15:49 UTC</createdTime>
+<ownerDesignName>BankProject</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C36811E1-01E4-FAA3-369D-589055D13A13"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
